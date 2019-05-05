@@ -1,8 +1,7 @@
-/*
-package Interface;
+//package Interface;
 //一个子类要实现接口有需要继承抽象类时，先继承后实现接口
 
-interface IMessage {
+/*interface IMessage {
     public void print(); // 接口中可以省略abstract
 }
 
@@ -29,8 +28,7 @@ public class ChildrenExtendsImplements {
         News n = (News)I;
         n.getNews();
     }
-}
-*/
+}*/
 //抽象类可以使用implements实现多个接口，但接口不能继承抽象类
 package Interface;
 interface A{

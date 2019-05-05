@@ -1,4 +1,4 @@
-/*package Interface;
+package Interface;//子类可以实现多个接口
 interface IMessage{
     public static final String MGS="i am a biter";  //全局常量
     public abstract void print();   //抽象方法
@@ -22,4 +22,4 @@ public class Interface {
         INews iNews = (INews) imessage;
         System.out.println(iNews.getNews());
     }
-}*/
+}
