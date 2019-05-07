@@ -31,6 +31,7 @@ public class SingleTon {
 
 //懒汉式  存在线程安全问题 所以不太用
 
+/*
 class SingletonPattern{
     private  static SingletonPattern instance;//= new SingletonPattern();
     private SingletonPattern(){ //私有的构造方法
@@ -38,6 +39,32 @@ class SingletonPattern{
     public static SingletonPattern getInstance(){
         if (instance == null){
             instance = new SingletonPattern();
+        }
+        return instance;
+    }
+}
+public class SingleTon{
+    public static void main(String[] args) {
+        SingletonPattern singletonPattern1 = null;
+        singletonPattern1 = SingletonPattern.getInstance();
+        SingletonPattern singletonPattern2 = null;
+        singletonPattern2 = SingletonPattern.getInstance();
+        System.out.println(singletonPattern1==singletonPattern2);
+    }
+}*/
+
+//改进懒汉式 解决线程安全问题 加双重锁
+class SingletonPattern{
+    private  static SingletonPattern instance;
+    private SingletonPattern(){
+    }
+    public static SingletonPattern getInstance(){
+        if (instance == null){
+            synchronized (SingletonPattern.class){
+                if(instance == null ){
+                    instance = new SingletonPattern();
+                }
+            }
         }
         return instance;
     }
