@@ -1,5 +1,6 @@
 package Interface;//子类可以实现多个接口
-interface IMessage{
+//JDK8之前接口定义1.全局常量 和2.抽象方法
+/*interface IMessage{
     public static final String MGS="i am a biter";  //全局常量
     public abstract void print();   //抽象方法
 }
@@ -22,4 +23,49 @@ public class Interface {
         INews iNews = (INews) imessage;
         System.out.println(iNews.getNews());
     }
+}*/
+
+//JDK8之后 接口新增 两种(一般不要用这两个)
+//1.default定义的普通方法
+/*interface IMessage{
+    public static final String MGS="i am a biter";  //全局常量
+    public abstract void print(); //抽象方法
+    public default void fun(){  //追加普通方法了，就有了方法体
+        System.out.println("JDK8之后default定义的普通方法");
+    }
+}
+class Message implements IMessage{
+    @Override
+    public void print() {
+        System.out.println("覆写接口的抽象方法");
+    }
+}
+public class Interface {
+    public static void main(String[] args) {
+      IMessage iMessage=new Message();
+      iMessage.print();
+      iMessage.fun();
+    }
+}*/
+
+//2.static定义的静态方法
+interface IMessage{
+    public static final String MGS="i am a biter"; //全局常量
+    public abstract void print();//抽象方法
+    public static IMessage getInstance(){// static修饰 与对象无关，通过接口名称直接调用
+        return new Message();
+        }
+    }
+class Message implements IMessage{
+    @Override
+    public void print() {
+        System.out.println("覆写接口的抽象方法");
+    }
+}
+
+public class Interface {
+    public static void main(String[] args) {
+        IMessage iMessage =  IMessage.getInstance(); //直接调用
+        iMessage.print();
+     }
 }
