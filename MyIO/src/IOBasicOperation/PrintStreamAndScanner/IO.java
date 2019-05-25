@@ -34,6 +34,19 @@ import java.util.Scanner;
     private String name;
     private int age;
 
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -49,21 +62,26 @@ import java.util.Scanner;
     public int getAge() {
         return age;
     }
-
-    public sequence(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
 }
 public class IO {
-    public static void main(String[] args) {
-        Person person
+    public static void main(String[] args) throws IOException {
+        Person person = new Person("张三",20);
         File file = new File("C:\\Users\\62424\\Desktop\\hello.txt");
-
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+        out.writeObject(person);
+        out.close();
     }
 }*/
 
-
+//反序列化
+public class IO {
+    public static void main(String[] args) throws Exception {
+        File file = new File("C:\\Users\\62424\\Desktop\\hello.txt");
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
+        System.out.println(in.readObject());
+        in.close();
+    }
+}
 
 
 
