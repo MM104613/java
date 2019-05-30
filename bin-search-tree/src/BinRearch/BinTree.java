@@ -15,4 +15,5 @@ public interface BinTree<E> {
     void inOrder();
     void postOrder();
     int size();
+    void levelOrder(); //层序遍历
 }

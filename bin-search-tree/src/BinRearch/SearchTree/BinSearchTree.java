@@ -2,6 +2,9 @@ package BinRearch.SearchTree;
 
 import BinRearch.BinTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
     class Node {
         E data;
@@ -17,7 +20,7 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
     private Node root;
 
     @Override
-    public void add(E e) {
+    /*public void add(E e) {
         if (root == null) {
             Node node = new Node(e);
             root = node;
@@ -27,6 +30,7 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
     }
 
     private void add(Node node, E e) {
+
         if (e.compareTo(root.data)==0) {
             return;
         }else if(e.compareTo(node.data) < 0 && node.left == null){
@@ -42,10 +46,31 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
           add(node.right, e);
         }
 
+    }*/
+    public void add(E e) {
+        add(root, e);
+    }
+
+    private Node add(Node node, E e) {
+        return node;
     }
 
     @Override
     public boolean contain(E e) {
+        if (root == null) {
+            return false;
+        }
+        return contain(root, e);
+    }
+
+    private boolean contain(Node node, E e) {
+        if (e.compareTo(node.data) == 0) {
+            return true;
+        } else if (e.compareTo(node.data) < 0) {
+            return contain(node.left, e);
+        } else if (e.compareTo(node.data) > 0) {
+            return contain(node.right, e);
+        }
         return false;
     }
 
@@ -76,21 +101,69 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
 
     @Override
     public void preOrder() {
+        preOrder(root);
+    }
 
+    private void preOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.println(node.data);
+        preOrder(node.left);
+        preOrder(node.right);
     }
 
     @Override
     public void inOrder() {
+        inOrder(root);
+    }
 
+    private void inOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.left);
+        System.out.println(node.data);
+        inOrder(node.right);
+        System.out.println(node.data);
     }
 
     @Override
     public void postOrder() {
+        postOrder(root);
+    }
 
+    private void postOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        preOrder(node.left);
+        preOrder(node.right);
+        System.out.println(node.data);
     }
 
     @Override
     public int size() {
         return size;
     }
+
+    @Override
+    public void levelOrder() {
+        Queue<Node> queue = new LinkedList<>();
+        if (root == null) {
+            return;
+        }
+        queue.add(root);
+        while (!queue.isEmpty()) {
+          Node node = queue.poll();
+            System.out.println(node.data);
+            if(node.left != null){
+                queue.add(node.left);
+            }
+            if(node.right != null){
+                queue.add(node.right);
+            }
+        }
+    }
+
 }

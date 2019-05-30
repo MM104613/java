@@ -10,6 +10,6 @@ public class Test {
         b.add(3);
         b.add(7);
         b.add(5);
-        System.out.println();
+        System.out.println(b.contain(7));
     }
 }
