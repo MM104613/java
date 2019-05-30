@@ -55,4 +55,5 @@ public class ArrayLoopQueue<E> implements Queue<E> {
     public boolean isEmpty() {
         return tail == head;
     }
+
 }
