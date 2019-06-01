@@ -7,7 +7,6 @@ public class PaiXu {
         Scanner scanner = new Scanner(System.in);
         int length;
         while(scanner.hasNext()){
-            length = scanner
         }
     }
 }
