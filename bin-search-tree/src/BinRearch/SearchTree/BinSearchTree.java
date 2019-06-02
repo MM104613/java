@@ -20,7 +20,7 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
     private Node root;
 
     @Override
-    /*public void add(E e) {
+    public void add(E e) {
         if (root == null) {
             Node node = new Node(e);
             root = node;
@@ -28,7 +28,6 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
         add(root, e);
         size++;
     }
-
     private void add(Node node, E e) {
 
         if (e.compareTo(root.data)==0) {
@@ -46,15 +45,14 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
           add(node.right, e);
         }
 
-    }*/
-    public void add(E e) {
+    }
+    /*public void add(E e) {
         add(root, e);
     }
-
     private Node add(Node node, E e) {
         return node;
     }
-
+*/
     @Override
     public boolean contain(E e) {
         if (root == null) {
@@ -62,7 +60,6 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
         }
         return contain(root, e);
     }
-
     private boolean contain(Node node, E e) {
         if (e.compareTo(node.data) == 0) {
             return true;
@@ -76,34 +73,110 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
 
     @Override
     public E getMax() {
-        return null;
+        if(root == null)
+            throw new IllegalArgumentException("搜索树为空");
+            Node maxNode = getMaxNode(root);
+            return maxNode.data;
+    }
+    private Node getMaxNode(Node node){
+        if(node.right == null){
+            return node;
+        }
+        return getMaxNode(node.right);
     }
 
     @Override
     public E getMin() {
-        return null;
+        if(root == null)
+            throw new IllegalArgumentException("搜素树为空");
+            Node minNode = getMinNode(root);
+            return minNode.data;
+            }
+    private Node getMinNode(Node node){
+        if(node.left == null){
+            return node;
+        }
+        return getMinNode(node.left);
     }
 
+     //删除任意元素
     @Override
-    public boolean remove() {
-        return false;
+    public void remove(E e) {
+         root = removeNode(root,e);
     }
+    private Node removeNode(Node node, E e){
+        if(node == null){
+            return null;
+        }
+        if(e.compareTo(node.data)<0){
+            node.left = removeNode(node.left,e);
+        }
+        if(e.compareTo(node.data)>0){
+            node.right=removeNode(node.right,e);
+        }else{ //要删除的节点只有左孩子
+            if(node.left != null && node.right == null){
+                Node leftResult = node.left;
+                node.left =null;
+                size --;
+                return leftResult;
+            }//要删除的数只有右孩子
+            if(node.right != null && node.left==null){
+                Node rightResult = node.right;
+                node.right = null;
+                size --;
+                return rightResult;
+            }//要删除的数左孩子右孩子都有
+            //找到前驱或者后继节点
+            if(node.right != null && node.left != null){
+             Node preNode = getMaxNode(node.left);
+             preNode.right = node.right;
+             preNode.left=removeMaxNode(node.left);
+             node.left=node.right=null;
+             size --;
+            }
+        }
+        return node;
+    }
+
 
     @Override
     public E removeMax() {
-        return null;
+        E result = getMax();
+        root = removeMaxNode(root);
+        return result;
+    }
+    private Node removeMaxNode(Node node){
+        if(node.right == null){
+            Node leftNode = node.left;
+            node.left = null;
+            size--;
+            return leftNode;
+        }
+        node.right = removeMaxNode(node.right);
+        return node ;
     }
 
     @Override
     public E removeMin() {
-        return null;
+        E result = getMin();
+        root = removeMinNode(root);
+        return result;
+    }
+    private Node removeMinNode(Node node){
+        if(node.left == null){
+            Node rightNode = node.right;
+            node.right = null;
+            size--;
+            return rightNode;
+        }
+        node.left = removeMinNode(node.left);
+        return node;
     }
 
     @Override
     public void preOrder() {
         preOrder(root);
     }
-
     private void preOrder(Node node) {
         if (node == null) {
             return;
@@ -117,7 +190,6 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
     public void inOrder() {
         inOrder(root);
     }
-
     private void inOrder(Node node) {
         if (node == null) {
             return;
@@ -125,20 +197,18 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
         inOrder(node.left);
         System.out.println(node.data);
         inOrder(node.right);
-        System.out.println(node.data);
     }
 
     @Override
     public void postOrder() {
         postOrder(root);
     }
-
     private void postOrder(Node node) {
         if (node == null) {
             return;
         }
-        preOrder(node.left);
-        preOrder(node.right);
+        postOrder(node.left);
+        postOrder(node.right);
         System.out.println(node.data);
     }
 
@@ -146,7 +216,7 @@ public class BinSearchTree<E extends Comparable<E>> implements BinTree<E> {
     public int size() {
         return size;
     }
-
+ //层序遍历
     @Override
     public void levelOrder() {
         Queue<Node> queue = new LinkedList<>();

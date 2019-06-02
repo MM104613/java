@@ -7,7 +7,7 @@ public interface BinTree<E> {
 
     E getMax();
     E getMin();
-    boolean remove();
+    void remove(E e);
     E removeMax();
     E removeMin();
     //前序遍历

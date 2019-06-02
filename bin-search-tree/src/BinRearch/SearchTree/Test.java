@@ -9,7 +9,8 @@ public class Test {
         b.add(1);
         b.add(3);
         b.add(7);
-        b.add(5);
-        System.out.println(b.contain(7));
+        b.add(4);
+    //    b.remove(9);
+        System.out.println(b.size());
     }
 }
