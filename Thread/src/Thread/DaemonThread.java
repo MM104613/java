@@ -12,7 +12,7 @@ class DaemonTest implements Runnable{
      while(true){
          System.out.println("当前线程是否为守护线程："+Thread.currentThread().isDaemon());
          try {
-             Thread.sleep(2000);
+             Thread.sleep(200);
          } catch (InterruptedException e) {
              System.out.println("当前线程是否为守护线程："+Thread.currentThread().isDaemon());
              System.out.println("线程被终止");
