@@ -37,18 +37,23 @@ public class RunnableTest {
 
 class MyRunnable implements Runnable {
     private int ticket = 20;
+    private String name;
+
+    public MyRunnable(String name) {
+        this.name = name;
+    }
 
     @Override
     public void run() { //此方法放每个线程需要执行的任务
         while (ticket > 0) {
-            System.out.println("当前线程" + Thread.currentThread().getName() + "票");
+            System.out.println("当前线程" + name+"还剩下" +ticket--+ "票");
         }
     }
 }
 
 public class RunnableTest {
     public static void main(String[] args) {
-        MyThread mt1 = new MyThread("黄牛A");
+        MyRunnable mt1 = new MyRunnable("黄牛A");
         // MyThread mt2 = new MyThread("子线程2");
         // MyThread mt3 = new MyThread("子线程3");
         Thread thread1 = new Thread(mt1);
