@@ -1,5 +1,5 @@
 package Lock;
-/*面试：Java中实现线程""锁的方式：synchronized 与 Lock
+/*面试：Java中实现线程"锁"的方式：synchronized 与 Lock
 synchronized 与 Lock的关系
 1.都是对象锁，都支持可重入锁
 2.Lock可以实现synchronized不具备的特性，如响应中断，支持超时，非阻塞的获取锁，公平锁，共享锁（读写锁，ReentrantReadWriterLock）
