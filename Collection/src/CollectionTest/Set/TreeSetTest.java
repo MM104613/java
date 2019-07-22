@@ -11,8 +11,8 @@ import java.util.TreeSet;
     底层实现：红黑树
 排序判断
 自定义类要使用TreeSet前提是：
-1.要么自定义类自己实现Comparable接口并且覆写compareTo()方法
-2.要么从外部传入一个该类的比较器对象实现Comparator接口
+1.要么自定义类自己实现Comparable接口并且覆写compareTo()方法     (内部排序)
+2.要么从外部传入一个该类的比较器对象实现Comparator接口           （外部排序）
 
 重复元素判断
 TreeSet根据比较接口的返回值来判断两个元素是否重复
