@@ -57,7 +57,7 @@ public class CollectionIteratorTest {
         Iterator<String> iterator = list.iterator();
         while(iterator.hasNext()){
             String str = iterator.next();
-            if(str.equals("world"))
+            if(str.equals("JAVA"))
                 list.remove(str);
             System.out.println(str);
         }
