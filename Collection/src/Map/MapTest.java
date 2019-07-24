@@ -1,7 +1,9 @@
 package Map;
 
 import com.sun.javafx.collections.MappingChange;
+/*Map:K,V
 
+*/
 import javax.swing.text.html.HTMLDocument;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -20,9 +22,7 @@ public class MapTest {
         Iterator<Map.Entry<Integer,String>> iterator = set.iterator();
         while(iterator.hasNext()){
             Map.Entry<Integer,String> entry = iterator.next();
-            System.out.println(entry);
+            System.out.println(entry.getKey()+"="+entry.getValue());
         }
-
-
     }
 }
