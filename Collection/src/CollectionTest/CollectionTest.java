@@ -16,6 +16,5 @@ Collection接口：是JAVA中保存单个对象的最顶层接口
 */
 public class CollectionTest {
     public static void main(String[] args) {
-
     }
 }
