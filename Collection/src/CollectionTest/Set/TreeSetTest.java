@@ -83,7 +83,7 @@ class PersonAgeSec implements Comparator<Person>{  // 升序排序
         return 0;
     }
 }
-class PersonAgeDesc implements Comparator<Person>{  // 升序排序
+class PersonAgeDesc implements Comparator<Person>{  // 降序排序
 
     @Override
     public int compare(Person o1, Person o2) {
