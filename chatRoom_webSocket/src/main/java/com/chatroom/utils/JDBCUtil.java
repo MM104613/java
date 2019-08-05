@@ -19,8 +19,8 @@ public class JDBCUtil {
             System.err.println("加载驱动出错");
         }
         //2.关闭
-        public static void getProperties(){
+        /*public static void getProperties(){
 
-        }
+        }*/
     }
 }
