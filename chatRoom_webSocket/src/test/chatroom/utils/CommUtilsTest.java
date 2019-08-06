@@ -1,11 +1,9 @@
-package com.chatroom.utils;
+package chatroom.utils;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Properties;
-
-import static org.junit.Assert.*;
 
 public class CommUtilsTest {
 

@@ -1,4 +1,4 @@
-package com.chatroom.utils;
+package chatroom.utils;
 
 import java.util.Properties;
 
