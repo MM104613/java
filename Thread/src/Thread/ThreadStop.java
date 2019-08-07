@@ -36,7 +36,7 @@ public class ThreadStop {
       Thread thread = new Thread(threadShutdowns);
       thread.start();
       Thread.sleep(1000);
-      //threadShutdowns.setFlag(false);  //1.
+     // threadShutdowns.setFlag(false);  //1.
       //thread.stop(); //2.
         thread.interrupt();//3.
     }

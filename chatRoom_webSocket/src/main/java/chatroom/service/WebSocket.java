@@ -12,12 +12,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 @ServerEndpoint("/webSocket")
 public class WebSocket {
     //存储所有连接到后端的webSocket
-    private static CopyOnWriteArrayList<WebSocket> clients =
-            new CopyOnWriteArrayList<>();
+    private static CopyOnWriteArraySet<WebSocket> clients =
+            new CopyOnWriteArraySet<>();
     //绑定当前webSocket会话
     private Session session;
     //缓存所有用户的列表

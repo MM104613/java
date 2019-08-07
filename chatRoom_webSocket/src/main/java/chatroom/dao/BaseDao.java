@@ -31,7 +31,6 @@ public class BaseDao {
     //关闭资源 Statement Result Connection
     protected  void closeResources (Connection connection,
                                    Statement statement){
-         closeResources(connection,statement);
         if(connection !=null){
             try {
                 connection.close();
