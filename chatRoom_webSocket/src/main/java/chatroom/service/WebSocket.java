@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-@ServerEndpoint("/webSocket")
+@ServerEndpoint("/websocket")
 public class WebSocket {
     //存储所有连接到后端的webSocket
     private static CopyOnWriteArraySet<WebSocket> clients =

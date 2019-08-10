@@ -57,7 +57,7 @@
 
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-        webSocket = new WebSocket('ws://127.0.0.1:8080/websocket?username=' + '${username}');
+        webSocket = new WebSocket('ws://127.0.0.1:8082/websocket?username=' + '${username}');
     } else {
         alert("当前浏览器不支持WebSocket");
     }
