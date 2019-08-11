@@ -28,10 +28,11 @@ class Bubble {
                 if(!flag)
                     break;
             }
+            System.out.print("冒泡排序：");
             for(int num =0; num< arr.length;num++){
-                System.out.print(arr[num]+"、");
+                System.out.print(+arr[num]+"、");
             }
-
+            System.out.println();
         }
 
     }
@@ -42,5 +43,7 @@ public class BubbleSort {
         int[] arr = {4, 6, 5, 8, 9, 1, 2};
         Bubble bubble = new Bubble();
         bubble.Bubble(arr);
+        InsertSort insertSort = new InsertSort();
+        insertSort.Insert(arr);
     }
 }
