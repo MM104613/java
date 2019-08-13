@@ -1,5 +1,7 @@
 package SevenSort;
 
+import SevenSort.InsertSort.InsertSort;
+
 //冒泡排序 O(n^2) O(1) 稳定
 /*
 思想：两两交换
@@ -41,8 +43,8 @@ class Bubble {
 public class BubbleSort {
     public static void main(String[] args) {
         int[] arr = {4, 6, 5, 8, 9, 1, 2};
-        Bubble bubble = new Bubble();
-        bubble.Bubble(arr);
+       // Bubble bubble = new Bubble();
+      //  bubble.Bubble(arr);
         InsertSort insertSort = new InsertSort();
         insertSort.Insert(arr);
     }
