@@ -7,7 +7,7 @@ package SevenSort.InsertSort;
 将已排序区的数倒着遍历 若碰到未排序区的数小于将已排序区的数向后移动 将数插入其中
 */
 public class InsertSort {
-    public void Insert(int arr[]){
+    public static void Insert(int arr[]){
        int n = arr.length;
        if(n <= 1){ //若数组中只有一个元素
            return;

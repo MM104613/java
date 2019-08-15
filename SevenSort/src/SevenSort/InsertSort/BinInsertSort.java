@@ -1,7 +1,7 @@
 package SevenSort.InsertSort;
 //二分排序
 public class BinInsertSort {
-    public void BinInsert(int arr[]){
+    public static void  BinInsert(int arr[]){
         int n = arr.length;
         if(n <= 1){
             return;
