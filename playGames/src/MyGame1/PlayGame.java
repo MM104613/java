@@ -28,7 +28,7 @@ public class PlayGame extends Frame {
 
 
     Image planeImg = GameUtils.getImage("images/plane.png");
-    Image bg = GameUtils.getImage("images/bg1.png");
+    Image bg = GameUtils.getImage("images/bg2.png");
     Plane plane = new Plane(planeImg, 400, 700);
     Bullet bullet = new Bullet();
     ArrayList<Bullet> bullets = new ArrayList<Bullet>();

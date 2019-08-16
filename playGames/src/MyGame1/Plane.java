@@ -31,10 +31,9 @@ public class Plane extends GameObject {
         this.img = img;
         this.x = x;
         this.y = y;
-        this.speed = 8;
+        this.speed = 15;
         this.width = img.getWidth(null);
         this.height = img.getHeight(null);
-
     }
     //方向增加
     public void addDirection(KeyEvent e){
