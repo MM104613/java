@@ -55,7 +55,7 @@ public class SingleTon{
 
 //改进懒汉式 解决线程安全问题 加双重锁
 class SingletonPattern{
-    private  static SingletonPattern instance;
+    private  static volatile SingletonPattern instance;
     private SingletonPattern(){
     }
     public static SingletonPattern getInstance(){
