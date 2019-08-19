@@ -2,6 +2,7 @@ package SevenSort.Test;
 
 import SevenSort.BubbleSort.BubbleSort;
 import SevenSort.FastSort.FastSort;
+import SevenSort.FastSort.TwoFastSort;
 import SevenSort.SelectSort.SelectSort;
 
 import java.util.Random;
@@ -11,7 +12,8 @@ public class Test {
         int[] data = makeData(50,50);
        // BubbleSort.Bubble(data);冒泡排序
         //SelectSort.Select(data);选择排序
-        FastSort.Fast(data);
+        //FastSort.Fast(data);一路快排
+        TwoFastSort.TwoFast(data);
         print(data);
     }
     public static int[] makeData(int size,int range){
