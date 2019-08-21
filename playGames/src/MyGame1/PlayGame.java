@@ -112,7 +112,7 @@ public class PlayGame extends Frame {
         addKeyListener(new keyMonitor()); //键盘监听启动
 
         //初始化子弹
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 30; i++) {
             Bullet bullet = new Bullet();
             bullets.add(bullet);
         }

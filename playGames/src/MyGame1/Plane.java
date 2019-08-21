@@ -1,6 +1,7 @@
 package MyGame1;
 
 import GameObject.GameObject;
+import Utils.Constant;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -12,16 +13,24 @@ public class Plane extends GameObject {
         if(planeLive){
             g.drawImage(img,(int)x,(int)y,null);
             if(up){
-                y -=speed;
+                if (y>40){
+                    y -=speed;
+                }
             }
             if(down){
-                y += speed;
+                if (y <Constant.WINDOWS_HEIGHT-height-10){
+                    y += speed;
+                }
             }
             if(left){
-                x -= speed;
+                if (x>20){
+                    x -= speed;
+                }
             }
             if(right){
-                x += speed;
+                if ( x < Constant.WINDOWS_WIDTH-width-10){
+                    x += speed;
+                }
             }
         }
 

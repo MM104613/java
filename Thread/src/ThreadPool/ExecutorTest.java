@@ -57,7 +57,7 @@ class CallableTest implements Callable<String>{
 public class ExecutorTest {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executorService = new ThreadPoolExecutor(2,3,
-                60, TimeUnit.SECONDS,new LinkedBlockingDeque<>());
+                60, TimeUnit.SECONDS,new LinkedBlockingQueue<>());
         CallableTest callableTest =new CallableTest();
         for(int i = 0; i < 5; i++){
            // executorService.submit(callableTest);线程提交
