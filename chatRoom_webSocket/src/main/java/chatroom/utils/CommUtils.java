@@ -24,14 +24,7 @@ public class CommUtils {
         }
         return properties;
     }
-    /*@Test
-    public void loadProperties(){
-        String fileName = "datasource.properties";
-        Properties properties = CommUtils.loadProperties(fileName);
-        System.out.println(properties);
-        String url = properties.getProperty("url");
-        Assert.assertEquals(null,url);
-    }*/
+
 
     public static String object2Json (Object obj){
      return gson.toJson(obj);
