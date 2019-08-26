@@ -19,7 +19,7 @@ public class Bullet extends GameObject {
     }
     public void drawBullet(Graphics g){
         Color colorOld = g.getColor();
-        g.setColor(Color.BLUE);
+        g.setColor(Color.WHITE);
         g.fillOval((int)x,(int)y,width,height);
 
         //子弹沿任意角度飞
